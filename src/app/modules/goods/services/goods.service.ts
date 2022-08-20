@@ -65,8 +65,8 @@ export class GoodsService {
    * @param value значение формы
    * @returns сущность обновленного продукта
    */
-  public updateProduct(value: IGoods): Observable<IGoods> {
-    return this.httpClient.patch<IGoods>(`${this.urlProduct}/${value.id}`, { ...value, price: +value.price });
+  public updateProduct(value: Partial<IGoods>): Observable<IGoods> {
+    return this.httpClient.patch<IGoods>(`${this.urlProduct}/${value.id}`, { ...value, price: value.price ? +value.price : null });
   }
 
   /**

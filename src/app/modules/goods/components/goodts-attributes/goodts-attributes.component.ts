@@ -123,7 +123,7 @@ export class GoodtsAttributesComponent implements OnInit {
       this.currCourse = this.formGroup.get('course')?.value;
 
       this.prevValue = value;
-      this.updateProduct();
+      this.updateProduct(this.formGroup.value);
     });
   }
 
@@ -131,11 +131,12 @@ export class GoodtsAttributesComponent implements OnInit {
    * Обновление продукта в БД
    * @private
    */
-  private updateProduct(): void {
+  private updateProduct(value: Partial<ICourse>): void {
     if (this.formGroup.valid) {
-      this.goodsService.updateProduct(this.formGroup.value).pipe(
+      this.goodsService.updateProduct(value).pipe(
         untilDestroyed(this)
       ).subscribe((value: IGoods) => {
+        // console.log(value);
         this.goodsService.updatedProduct(value);
       });
     }
@@ -148,8 +149,10 @@ export class GoodtsAttributesComponent implements OnInit {
   private changePrice(): void {
     this.formGroup?.get('price')?.valueChanges.pipe(untilDestroyed(this))
       .subscribe((value: string) => {
-        this.formGroup.get('price')?.patchValue(value, { emitEvent: false });
-        this.updateProduct();
+        // console.log(value);
+        // console.log(this.formGroup?.value);
+        // this.formGroup.get('price')?.setValue(value, { emitEvent: false });
+        this.updateProduct({...this.formGroup.value, price: value});
       });
   }
 
@@ -160,7 +163,7 @@ export class GoodtsAttributesComponent implements OnInit {
   private initFormGroup(): void {
     this.formGroup = new FormGroup({
       id: new FormControl(null),
-      price: new FormControl(null, [Validators.pattern('[0-9]+(\\.[0-9]{1,2})?%?')]),
+      price: new FormControl(null, []),
       course: new FormControl(null),
     });
   }

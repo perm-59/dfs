@@ -1,3 +1,4 @@
+import { CustomComponentsModule } from './../../customs-components/custom-components.module';
 import { GoodsRoutingModule } from './goods-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -23,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GoodsRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CustomComponentsModule
   ]
 })
 export class GoodsModule {
