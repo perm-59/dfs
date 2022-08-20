@@ -1,0 +1,28 @@
+.attributes {
+  height: 50%;
+  position: relative;
+
+  .container {
+    padding: 20px;
+    max-width: 600px;
+
+    .courses {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+
+    .product-characteristics__spec {
+      grid-gap: 16px;
+      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 10px 0;
+
+      .product-characteristics__spec-title {
+        border-bottom: 1px dotted #ddd;
+      }
+    }
+  }
+
+}

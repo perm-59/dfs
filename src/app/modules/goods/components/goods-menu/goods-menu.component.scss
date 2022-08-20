@@ -1,0 +1,31 @@
+.menu {
+  width: 300px;
+  height: 100vh;
+  overflow: auto;
+  box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+
+  &__items {
+    list-style-type: none;
+    cursor: pointer;
+
+    :hover {
+      background-color: var(--hover-bc);
+      color: #2A2A2A;
+    }
+
+    :active {
+      background-color: var(--active-bc);
+      color: #2A2A2A;
+    }
+  }
+
+  &__item {
+    padding: 10px 0 10px 20px;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+  }
+
+  .selected {
+    background-color: var(--hover-bc);
+    color: #2A2A2A;
+  }
+}

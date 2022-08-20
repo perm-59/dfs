@@ -1,0 +1,10 @@
+<div class="menu">
+  <ul class="menu__items">
+    <li
+      *ngFor="let item of menuItems"
+      class="menu__item"
+      [class.selected]="item.selected"
+      (click)="selectedItem(item)"
+    >{{item.name}}</li>
+  </ul>
+</div>

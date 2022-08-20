@@ -1,0 +1,41 @@
+<div class="attributes">
+  <div class="container">
+    <form [formGroup]="formGroup" *ngIf="data && !!formGroup; else notSelected">
+      <div class="courses">
+        <select
+          formControlName="course">
+          <option *ngFor="let course of courses" [selected]="course.selected">{{ course.name }}</option>
+        </select>
+      </div>
+      <ul class="characters">
+        <div>
+          <h2>Характеристики</h2>
+          <li class="product-characteristics__spec" *ngFor="let item of data">
+            <div class="product-characteristics__spec-title">
+              <span class="item__label">{{item.label}}</span>
+            </div>
+            <span class="item__cor" *ngIf="item.attribute !== 'price'">{{item.data}}</span>
+            <div *ngIf="item.attribute === 'price'" class="item__price">
+              <input type="text" formControlName="price" [class.error]="formGroup.controls.price.errors?.pattern">
+              <div *ngIf="formGroup.controls.price.errors?.pattern" class="item__error">
+                Не корректные данные
+              </div>
+            </div>
+
+
+          </li>
+          <li class="product-characteristics__spec">
+            <div class="product-characteristics__spec-title">
+              <span>Курс</span>
+            </div>
+            <span class="item__cor">{{ currCourse }}</span>
+          </li>
+        </div>
+      </ul>
+    </form>
+  </div>
+</div>
+
+<ng-template #notSelected>
+  <h2>Выберите продукт</h2>
+</ng-template>

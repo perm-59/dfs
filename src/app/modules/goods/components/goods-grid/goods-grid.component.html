@@ -1,0 +1,30 @@
+<div class="grid">
+  <div class="container">
+    <table *ngIf="state === 'loaded'" class="table">
+      <tr class="table-header">
+        <th class="table-header-cell">Наименование</th>
+        <th class="table-header-cell">Цена</th>
+        <th class="table-header-cell">Курс</th>
+        <th class="table-header-cell">Категория</th>
+        <th class="table-header-cell">Ссылка</th>
+      </tr>
+      <tbody>
+      <tr *ngFor="let item  of tableData" class="table-row">
+        <td width="20%" class="table-cell">{{ item.name }}</td>
+        <td width="20%" class="table-cell">{{ item.price }}</td>
+        <td width="20%" class="table-cell">{{ item.course }}</td>
+        <td width="20%" class="table-cell">{{ item.category }}</td>
+        <td width="20%" class="table-cell">
+          <a [href]="item.link" target="_blank">Посмотреть</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div *ngIf="state === 'loading'">
+      <p>Загрузка...</p>
+    </div>
+    <div *ngIf="state === 'noData'">
+      <p>Данные не найдены</p>
+    </div>
+  </div>
+</div>

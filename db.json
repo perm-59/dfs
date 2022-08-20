@@ -1,0 +1,141 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "name": "RUB",
+      "selected": false,
+      "multiplier": 1
+    },
+    {
+      "id": "2",
+      "name": "USD",
+      "selected": false,
+      "multiplier": 70
+    },
+    {
+      "id": "3",
+      "name": "EURO",
+      "selected": false,
+      "multiplier": 80
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Наушники Apple AirPods (2021) белые",
+      "price": 18990,
+      "course": "RUB",
+      "selected": false,
+      "category": "accessories",
+      "link": "https://re-store.ru/catalog/MME73/"
+    },
+    {
+      "id": "2",
+      "name": "Стилус Apple Pencil (1-го поколения), белый",
+      "price": 11490,
+      "course": "RUB",
+      "selected": false,
+      "category": "accessories",
+      "link": "https://re-store.ru/catalog/MK0C2/"
+    },
+    {
+      "id": "3",
+      "name": "Кабель Apple Lightning/USB (2 м)",
+      "price": 3990,
+      "course": "RUB",
+      "selected": false,
+      "category": "appliances",
+      "link": "https://re-store.ru/catalog/MD819ZM-A/"
+    },
+    {
+      "id": "4",
+      "name": "Apple MacBook Air 13\" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ SSD, «сияющая звезда»",
+      "price": 139990,
+      "course": "RUB",
+      "selected": false,
+      "category": "mac",
+      "link": "https://re-store.ru/catalog/MLY13/"
+    },
+    {
+      "id": "5",
+      "name": "Apple MacBook Air 13\" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ SSD, «полуночный черный»",
+      "price": 1139990,
+      "course": "RUB",
+      "selected": false,
+      "category": "mac",
+      "link": "https://re-store.ru/catalog/MLY33/"
+    },
+    {
+      "id": "6",
+      "name": "Apple MacBook Air (M1, 2020) 8 ГБ, 256 ГБ SSD, «серый космос»",
+      "price": 119990,
+      "course": "RUB",
+      "selected": false,
+      "category": "mac",
+      "link": "https://re-store.ru/catalog/MGN63/"
+    },
+    {
+      "id": "7",
+      "name": "Apple MacBook Pro 13\" (M2, 8C CPU/10C GPU, 2022), 8 ГБ, 512 ГБ SSD, «серый космос»",
+      "price": 179990,
+      "course": "RUB",
+      "selected": false,
+      "category": "mac",
+      "link": "https://re-store.ru/catalog/MNEJ3/"
+    },
+    {
+      "id": "8",
+      "name": "Apple MacBook Pro 16\" (M1 Pro 10C CPU, 16C GPU, 2021) 16 ГБ, 512 ГБ SSD, «серый космос»",
+      "price": 259990,
+      "course": "RUB",
+      "selected": false,
+      "category": "mac",
+      "link": "https://re-store.ru/catalog/MK183/"
+    },
+    {
+      "id": "9",
+      "name": "Apple iPhone 12, 128 ГБ, фиолетовый",
+      "price": 69990,
+      "course": "RUB",
+      "selected": false,
+      "category": "iphone",
+      "link": "https://re-store.ru/catalog/10112128PPL/"
+    },
+    {
+      "id": "10",
+      "name": "Apple iPhone 13, 256 ГБ, синий",
+      "price": 90990,
+      "course": "RUB",
+      "selected": false,
+      "category": "iphone",
+      "link": "https://re-store.ru/catalog/10113256BLU/"
+    },
+    {
+      "id": "11",
+      "name": "Apple iPhone 13, 256 ГБ, розовый",
+      "price": 90990,
+      "course": "RUB",
+      "selected": false,
+      "category": "iphone",
+      "link": "https://re-store.ru/catalog/10113256PNK/"
+    },
+    {
+      "id": "12",
+      "name": "Apple iPhone 13 mini, 128 ГБ, розовый",
+      "price": 69990,
+      "course": "RUB",
+      "selected": false,
+      "category": "iphone",
+      "link": "https://re-store.ru/catalog/10113MINI128PNK/"
+    },
+    {
+      "id": "13",
+      "name": "Apple iPhone 13 mini, 128 ГБ, зеленый",
+      "price": 69990,
+      "course": "RUB",
+      "selected": false,
+      "category": "iphone",
+      "link": "https://re-store.ru/catalog/10113MINI128GRN/"
+    }
+  ]
+}

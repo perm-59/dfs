@@ -1,0 +1,15 @@
+@import "fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #2A2A2A;
+  color: #BFDFF4;
+}
+
+:root {
+  font-family: "PTSans-Regular", sans-serif;
+  --hover-bc: #C9E3F4;
+  --active-bc: #BFDFF4;
+  --color-error: #D9534F
+}
