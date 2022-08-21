@@ -9,13 +9,14 @@
         <th class="table-header-cell">Ссылка</th>
       </tr>
       <tbody>
-      <tr *ngFor="let item  of tableData" class="table-row">
-        <td width="20%" class="table-cell">{{ item.name }}</td>
-        <td width="20%" class="table-cell">{{ item.price }}</td>
-        <td width="20%" class="table-cell">{{ item.course }}</td>
-        <td width="20%" class="table-cell">{{ item.category }}</td>
-        <td width="20%" class="table-cell">
-          <a [href]="item.link" target="_blank">Посмотреть</a>
+      <tr *ngFor="let item of tableData; let index = index" class="table-row" [class.selected]="selectedIndex === index"
+          (click)="onSelectedRow(index)">
+        <td class="table-cell">{{ item.name }}</td>
+        <td class="table-cell">{{ item.price }}</td>
+        <td class="table-cell">{{ item.course }}</td>
+        <td class="table-cell">{{ item.category }}</td>
+        <td class="table-cell">
+          <a [href]="item.link" target="_blank" (click)="selectLink($event)">Посмотреть</a>
         </td>
       </tr>
       </tbody>

@@ -22,6 +22,8 @@ export class GoodsGridComponent implements OnInit {
   /** состояние загрузки данных в таблицу */
   public state: 'loading' | 'loaded' | 'noData' | 'notSelected' = 'notSelected';
 
+  public selectedIndex: number | null = null;
+
   constructor(
     private readonly goodsService: GoodsService,
   ) {
@@ -41,4 +43,23 @@ export class GoodsGridComponent implements OnInit {
       });
   }
 
+  /**
+   * Выбор строки таблицы
+   * @param index индекс выбранной строки
+   */
+  public onSelectedRow(index: number): void {
+    if (index === this.selectedIndex) {
+      this.selectedIndex = null;
+    } else {
+      this.selectedIndex = index;
+    }
+  }
+
+  /**
+   * Клик по ссылке
+   * @param event событие
+   */
+  public selectLink(event: MouseEvent): void {
+    event.stopPropagation();
+  }
 }

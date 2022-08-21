@@ -10,5 +10,14 @@
       border-collapse: collapse;
       padding: 10px 0 10px 5px;
     }
+
+    .table-cell {
+      width: 20%;
+    }
+
+    .selected > td {
+      background-color: var(--active-bc);
+      color: #2A2A2A;
+    }
   }
 }
