@@ -16,15 +16,11 @@
             </div>
             <span class="item__cor" *ngIf="item.attribute !== 'price'">{{item.data}}</span>
             <div *ngIf="item.attribute === 'price'" class="item__price">
-              <!-- <input type="text" formControlName="price" [class.error]="formGroup.controls.price.errors?.pattern"> -->
-
-              <app-custom-input
-              formControlName="price"
-              placeholder="Введите цену"
-            
-              ></app-custom-input>
+              <ui-input
+                formControlName="price"
+                placeholder="Введите цену">
+              </ui-input>
             </div>
-
 
           </li>
           <li class="product-characteristics__spec">

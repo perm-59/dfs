@@ -73,8 +73,6 @@ export class GoodsMenuComponent implements OnChanges {
   public ngOnChanges(): void {
     const selectedMenu = this.menuItems.find((item: IGoods) => item.selected);
 
-    console.log(1);
-
     if (selectedMenu) {
       this.getProduct(selectedMenu);
     }

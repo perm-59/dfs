@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UiLibModule } from '../../projects/ui-lib/src/lib/ui-lib.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
+    UiLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

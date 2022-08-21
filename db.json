@@ -32,7 +32,7 @@
     {
       "id": "2",
       "name": "Стилус Apple Pencil (1-го поколения), белый",
-      "price": 11490,
+      "price": null,
       "course": "RUB",
       "selected": false,
       "category": "accessories",

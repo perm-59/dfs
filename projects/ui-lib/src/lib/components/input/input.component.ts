@@ -1,11 +1,11 @@
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 
 /**
- * Кастомный инпут
+ * Компонент инпута
  */
 @Component({
-  selector: 'app-custom-input',
+  selector: 'ui-input',
   template: `
     <div class="block">
       <input type="text"
@@ -16,20 +16,19 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
         Не корректные данные
       </div>
     </div>
-
   `,
-  styleUrls: ['./custom-input.component.scss'],
+  styleUrls: ['./input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
   ,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: CustomInputComponent,
+      useExisting: InputComponent,
       multi: true,
     },
   ],
 })
-export class CustomInputComponent implements OnInit, ControlValueAccessor {
+export class InputComponent implements ControlValueAccessor {
 
 
   /** контрол */
@@ -38,13 +37,8 @@ export class CustomInputComponent implements OnInit, ControlValueAccessor {
   /** плейсхолдер */
   @Input() public placeholder: string = '';
 
-  ngOnInit() {
-    this.input.valueChanges.subscribe(value => console.log(this.input));
-  }
-
   public writeValue(input: string): void {
     this.input.setValue(input);
-    console.log(this.input);
   }
 
   private subscriptions: any[] = [];

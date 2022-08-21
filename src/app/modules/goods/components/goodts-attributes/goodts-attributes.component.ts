@@ -149,9 +149,6 @@ export class GoodtsAttributesComponent implements OnInit {
   private changePrice(): void {
     this.formGroup?.get('price')?.valueChanges.pipe(untilDestroyed(this))
       .subscribe((value: string) => {
-        // console.log(value);
-        // console.log(this.formGroup?.value);
-        // this.formGroup.get('price')?.setValue(value, { emitEvent: false });
         this.updateProduct({...this.formGroup.value, price: value});
       });
   }
