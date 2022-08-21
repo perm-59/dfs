@@ -23,7 +23,7 @@
     {
       "id": "1",
       "name": "Наушники Apple AirPods (2021) белые",
-      "price": null,
+      "price": 14590,
       "course": "RUB",
       "selected": false,
       "category": "accessories",
@@ -50,8 +50,8 @@
     {
       "id": "4",
       "name": "Apple MacBook Air 13\" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ SSD, «сияющая звезда»",
-      "price": 139990,
-      "course": "RUB",
+      "price": 1999.86,
+      "course": "USD",
       "selected": false,
       "category": "mac",
       "link": "https://re-store.ru/catalog/MLY13/"

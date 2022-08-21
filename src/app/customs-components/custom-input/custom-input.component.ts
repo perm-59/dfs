@@ -1,4 +1,4 @@
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormGroup, FormControlName, FormControl, NG_VALIDATORS, AbstractControl, ValidationErrors, Validators, ValidatorFn, AbstractControlOptions } from '@angular/forms';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 /**
@@ -8,16 +8,16 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   selector: 'app-custom-input',
   template: `
     <div class="block">
-    <input type="text"
-        [placeholder]="placeholder"
-       [formControl]="input"
-       (blur)="onTouch()">
-       <div *ngIf="input?.errors" class="item__error">
-                Не корректные данные
-              </div>
+      <input type="text"
+             [placeholder]="placeholder"
+             [formControl]="input"
+             (blur)="onTouch()">
+      <div *ngIf="input?.errors" class="item__error">
+        Не корректные данные
+      </div>
     </div>
 
-    `,
+  `,
   styleUrls: ['./custom-input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
   ,
@@ -27,25 +27,19 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
       useExisting: CustomInputComponent,
       multi: true,
     },
-    {
-      provide: NG_VALIDATORS,
-      useExisting: CustomInputComponent,
-      multi: true,
-    },
   ],
 })
-export class CustomInputComponent implements ControlValueAccessor {
+export class CustomInputComponent implements OnInit, ControlValueAccessor {
 
-  @Input() public validator:  ValidatorFn[] = [];
 
-  input = new FormControl('', [Validators.pattern('[0-9]+(\\.[0-9]{1,2})?%?')])
+  /** контрол */
+  input = new FormControl('', [Validators.pattern('[0-9]+(\\.[0-9]{1,2})?%?')]);
 
+  /** плейсхолдер */
   @Input() public placeholder: string = '';
 
-
-
   ngOnInit() {
-    this.input.valueChanges.subscribe(value => console.log(this.input))
+    this.input.valueChanges.subscribe(value => console.log(this.input));
   }
 
   public writeValue(input: string): void {
@@ -65,14 +59,10 @@ export class CustomInputComponent implements ControlValueAccessor {
     this.subscriptions.forEach(sub => sub.unsubscribe());
   }
 
-  public onTouch: any = () => {}
+  public onTouch: any = () => {
+  };
 
   public registerOnTouched(fn: any): void {
     this.onTouch = fn;
-  }
-
-  public validate(control: AbstractControl): ValidationErrors | null {
-    if (control.errors) return {pattern :true}
-    return null;
   }
 }
